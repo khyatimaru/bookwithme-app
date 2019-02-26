@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bookwithme-app';
+  componentTitle = "I am app component from component.ts";
+
+  clickHandler() {
+    alert("I am clicked!");
+  }
 }
+
