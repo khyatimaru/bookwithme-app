@@ -1,4 +1,5 @@
 const Rental = require("./models/rental");
+const User = require("./models/user");
 
 class FakeDb {
 
@@ -35,23 +36,36 @@ class FakeDb {
         shared: true,
         description: "Very nice apartment in center of the city.",
         dailyRate: 23
-      }]
+      }];
+
+    this.users = [{
+      username: "Test User",
+      email: "test@gmail.com",
+      password: "testtest"
+    }];
   }
 
-  pushRentalsToDb() {
+  pushDataToDb() {
+
+    const user = new User(this.users[0]);
+
     this.rentals.forEach((rental) => {
       const newRental = new Rental(rental);
-    newRental.save();
+      newRental.user = user;
+      user.rentals.push(newRental);
+      newRental.save();
     });
+    user.save();
   }
-  seedDb() {
-    this.cleanDb();
-    this.pushRentalsToDb();
+  async seedDb() {
+    await this.cleanDb();
+    this.pushDataToDb();
   }
 
   async cleanDb() {
   //remove method is deprecated so using deleteMany .. for deleteMany if query is provided then it will delete multiple records that match the query and if empty paranthesis is provided then it will delete all the records
-    await Rental.deleteMany({});
+  await User.deleteMany({});
+  await Rental.deleteMany({});
   }
 
 }
