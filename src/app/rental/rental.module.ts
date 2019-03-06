@@ -12,6 +12,11 @@ import { NgPipesModule } from 'ngx-pipes';
 import { UppercasePipe } from '../common/pipes/uppercase.pipes';
 
 import { MapModule } from '../common/map/map.module';
+import { Daterangepicker } from 'ng2-daterangepicker';
+
+import { AuthGuard } from '../auth/shared/auth.guard';
+import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +24,8 @@ import { MapModule } from '../common/map/map.module';
     RentalListItemComponent,
     RentalComponent,
     RentalDetailComponent,
-    UppercasePipe
+    UppercasePipe,
+    RentalDetailBookingComponent
   ],
   providers: [
     RentalService
@@ -29,7 +35,8 @@ import { MapModule } from '../common/map/map.module';
     RentalRoutingModule,
     HttpClientModule,
     NgPipesModule,
-    MapModule
+    MapModule,
+    Daterangepicker
   ]
 })
 
