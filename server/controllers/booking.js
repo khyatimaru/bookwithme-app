@@ -43,7 +43,7 @@ exports.createBooking = function(req, res){
        });
      }
      else {
-       return res.status(422).send({errors: [{title: 'Invalid Booking!', detail: 'Choosen Dates already taken!'}]});
+       return res.status(422).send({errors: [{title: 'Invalid Booking!', detail: 'Choosen Dates are already taken!'}]});
      }
   })
 }
