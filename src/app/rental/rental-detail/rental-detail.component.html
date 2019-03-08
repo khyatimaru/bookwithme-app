@@ -44,8 +44,12 @@
         </div>
       </div>
       <div class="col-md-4">
-        <bookwithme-rental-detail-booking [price]="rental.dailyRate"></bookwithme-rental-detail-booking>
+        <bookwithme-rental-detail-booking
+          [rental]="rental">
+        </bookwithme-rental-detail-booking>
       </div>
     </div>
   </div>
 </section>
+
+
