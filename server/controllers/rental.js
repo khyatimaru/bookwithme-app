@@ -19,7 +19,8 @@ exports.createRental = function(req, res){
       User.update(
         { _id: userDetails.id }, { $push: { rentals: newRental }}, function(){});
 
-      return res.json({newRental});
+    console.log("newRental is = ", newRental);
+      return res.json(newRental);
     });
 }
 
