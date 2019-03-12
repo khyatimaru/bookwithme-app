@@ -12,6 +12,7 @@ import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { ManageModule } from './manage/manage.module';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     AppRoutingModule,
     RentalModule,
+    ManageModule,
     AuthModule,
     NgbModule.forRoot(),
     BrowserAnimationsModule, //required animations module for Toastr
