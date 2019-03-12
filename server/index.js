@@ -11,7 +11,7 @@ const rentalRoutes = require("./routes/rentals"),
       bookingRoutes = require("./routes/bookings");
 
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
-  if(process.env.NODE_ENV === 'production') {
+  if(process.env.NODE_ENV !== 'production') {
     const fakeDb = new FakeDb;
     //fakeDb.seedDb();
   }
