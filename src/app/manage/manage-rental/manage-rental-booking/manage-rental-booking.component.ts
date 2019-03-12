@@ -12,7 +12,7 @@ export class ManageRentalBookingComponent implements OnInit {
   @Input() bookings: Booking[];
   errors: any[] = [];
 
-  constructor(private modalService: NgbModal,) { }
+  constructor(public modalService: NgbModal,) { }
 
   ngOnInit() {
   }
